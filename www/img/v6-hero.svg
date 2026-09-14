@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs>
+<radialGradient id="bg"><stop stop-color="#162a4a"/><stop offset=".55" stop-color="#081221"/><stop offset="1" stop-color="#02050c"/></radialGradient>
+<linearGradient id="beam"><stop stop-color="#fff"/><stop offset=".2" stop-color="#62e8ff"/><stop offset="1" stop-color="#1677ff" stop-opacity="0"/></linearGradient>
+<linearGradient id="metal"><stop stop-color="#b9c5d3"/><stop offset=".25" stop-color="#293747"/><stop offset=".7" stop-color="#111c2a"/><stop offset="1" stop-color="#050b14"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="600" fill="url(#bg)"/>
+<g opacity=".22" stroke="#38bdf8"><path d="M0 520L240 180M80 600L360 0M780 600L1080 0M940 600L1200 250"/><path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200"/></g>
+<g filter="url(#glow)" fill="none" stroke="#4de8ff" opacity=".45"><circle cx="900" cy="330" r="170"/><circle cx="900" cy="330" r="125"/><circle cx="900" cy="330" r="75"/></g>
+<!-- Omega silhouette --> <g transform="translate(720 105)"><path d="M120 20L210 0l75 55-12 90 55 90-60 55-80-20-80 20-60-55 55-90-12-90z" fill="#101927" stroke="#33465e" stroke-width="10"/><circle cx="205" cy="135" r="55" fill="#21080b" stroke="#ff3448" stroke-width="10"/><circle cx="205" cy="135" r="18" fill="#ff5a3d" filter="url(#glow)"/><path d="M90 100L15 145M90 185L0 220M320 100l75 45M320 185l90 35" stroke="#ff3b45" stroke-width="22" stroke-linecap="round"/><path d="M125 235l-30 90M275 235l30 90" stroke="#1b293a" stroke-width="35" stroke-linecap="round"/></g>
+<!-- turret --> <g transform="translate(120 300)"><ellipse cx="180" cy="220" rx="150" ry="30" fill="#02060c"/><path d="M70 220L95 105h170l25 115z" fill="url(#metal)" stroke="#50647b" stroke-width="5"/><circle cx="180" cy="110" r="65" fill="#0d1b2c" stroke="#55708b" stroke-width="8"/><path d="M210 105L420 45l18 35-210 70z" fill="url(#metal)" stroke="#607a95" stroke-width="7"/><circle cx="425" cy="65" r="18" fill="#56e7ff" filter="url(#glow)"/><path d="M438 65L920 205" stroke="url(#beam)" stroke-width="10" filter="url(#glow)"/></g>
+<g fill="#fff" font-family="Arial,sans-serif" font-weight="800" letter-spacing="8"><text x="55" y="80" font-size="52">MEMRISTORI</text><text x="58" y="120" font-size="20" fill="#67e8f9">TOWER DEFENSE • VISUAL OVERHAUL</text></g>
+</svg>

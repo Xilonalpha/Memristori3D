@@ -1,0 +1,9 @@
+MEMRISTOR v5.5.3 — AD_ID FIX
+
+Base: v5.5.2 IN-APP AD COMPLETE.
+Only required release changes:
+- version 5.5.3
+- Android versionCode 50503
+- explicit com.google.android.gms.permission.AD_ID in AndroidManifest via config.xml
+- Adsterra in-app banner and existing game files preserved
+- Android target SDK remains 36

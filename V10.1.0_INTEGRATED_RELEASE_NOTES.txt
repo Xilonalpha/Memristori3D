@@ -1,0 +1,17 @@
+MEMRISTORI V10.1.1 — INTEGRATED COMPLETE
+
+Base: V10.0 ULTIMATE COMPLETE
+
+Completed integrations:
+- V10 skill tree effects consumed by gameplay
+- Relic effects consumed by gameplay
+- Local season modifiers consumed by gameplay
+- Adaptive Director now influences wave rewards as well as pressure
+- Daily perfect-wave reward and Low Energy kill-energy modifier wired
+- Season milestones grant real rewards
+- Elite reward multiplier wired
+- Overdrive duration skill wired
+- Version footer corrected to V10.1.1
+- Release signing profile preserved with working key0 / PKCS12 certificate
+
+No online/server dependency added. Renderer/game architecture preserved and changes are additive.

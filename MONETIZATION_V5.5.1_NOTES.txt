@@ -1,0 +1,11 @@
+MEMRISTOR v5.5.1 — MONETIZATION PATCH
+
+Base: Memristor v5.5 complete fixed source.
+Preserved: existing game renderer, maps, waves, bosses, progression, audio and UI.
+Added:
+- Adsterra SmartLink action in main menu.
+- Cordova InAppBrowser plugin for external SmartLink opening.
+- Website-side Adsterra Social Bar/Popunder, Native Banner, 300x250, 160x300 and 320x50 integrations.
+- Version bump to 5.5.1 / Android versionCode 50501.
+
+The SmartLink action is optional and does not reward or require an ad click.

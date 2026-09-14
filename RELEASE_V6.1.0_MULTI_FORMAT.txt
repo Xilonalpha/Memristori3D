@@ -1,0 +1,28 @@
+MEMRISTORI V6.1.0 — MULTI-FORMAT ADS RELEASE
+
+Base: exact stable V6.0.3 PERFORMANCE + TOUCH FIXED.
+
+Preserved:
+- all V6.0.3 graphics and renderer
+- gameplay and touch fixes
+- 200 waves / Omega / 9 sectors
+- daily challenge / daily rewards / story / achievements
+- RO / IT / EN / FR / ES localization
+- existing 320x50 in-game banner
+- existing SmartLink action
+
+Added:
+- 300x250 Adsterra/HighRevenueFormat banner in the main menu
+- Native Banner in the main menu
+- 160x300 Adsterra/HighRevenueFormat banner in an expandable More Ads section
+
+Not automatically inserted as popups/redirects:
+- Social Bar
+- Popunder
+
+Release build:
+- Android package type: bundle (AAB)
+- version: 6.1.0
+- versionCode: 61000
+- alias: key0
+- uses the same working signing certificate as the successful V5.5.2 build

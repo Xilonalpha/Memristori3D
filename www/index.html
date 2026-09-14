@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#070B14">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon-192x192.png">
+<title>MEMRISTORI — Tower Defense</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<script src="cordova.js"></script>
+</head>
+<body>
+
+<!-- ===================== SPLASH ===================== -->
+<section id="screen-splash" class="screen active">
+  <div class="splash-wrap">
+    <div class="core-logo">
+      <div class="core-ring r1"></div>
+      <div class="core-ring r2"></div>
+      <div class="core-ring r3"></div>
+      <div class="core-dot"></div>
+    </div>
+    <h1 class="logo-title">MEM<span>RISTOR</span></h1>
+    <p class="logo-sub" id="splashText">Inițializare circuit memristor…</p>
+    <div class="loadbar"><div class="loadbar-fill" id="loadbarFill"></div></div>
+  </div>
+</section>
+
+<!-- ===================== V6 MAIN COMMAND CENTER ===================== -->
+<section id="screen-menu" class="screen">
+  <div class="v6-menu-bg"></div>
+  <div class="v6-menu-wrap">
+    <div class="v6-brand">
+      <div class="v6-brand-mark"><span></span><i></i></div>
+      <div><div class="v6-title">MEMRISTORI</div><div class="v6-subtitle" id="towerDefenseLabel">TOWER DEFENSE</div></div>
+    </div>
+    <div class="v6-hero"><img src="img/v6-hero.svg" alt="Memristori Tower Defense"></div>
+    <div class="v6-command">
+      <div class="v6-profile"><div class="v6-avatar">M</div><div><b id="defenseCommand">DEFENSE COMMAND</b><small id="coreStatus">CORE STATUS: ONLINE</small></div><div class="v6-resource"><span>💠</span><b id="statCrystals">0</b></div></div>
+      <div class="v6-progress"><div><span id="bestWaveLabel">BEST WAVE</span><b id="statBestWave">0 / 200</b></div><div class="v6-progress-bar"><i id="v6BestBar"></i></div></div>
+    </div>
+    <div class="v6-primary-grid">
+      <button class="v6-big-btn primary" id="btnNewGame"><strong>▶</strong><span id="startDefenseLabel">START DEFENSE</span><small id="newCampaignLabel">NEW CAMPAIGN</small></button>
+      <button class="v6-big-btn" id="btnContinue" style="display:none"><strong>⏵</strong><span id="continueLabel">CONTINUE</span><small id="continueWaveLabel">WAVE <em id="continueWave"></em></small></button>
+      <button class="v6-big-btn" id="btnMapSelect"><strong>🗺</strong><span id="tacticalMapLabel">TACTICAL MAP</span><small id="uniqueSectorsLabel">9 UNIQUE SECTORS</small></button>
+    </div>
+    <div class="v6-feature-row">
+      <button class="v6-feature" id="btnShop"><b>⚙</b><span id="arsenalLabel">ARSENAL</span><small id="arsenalSub">UPGRADES</small></button>
+      <button class="v6-feature" id="btnAchievements"><b>🏆</b><span id="rankingsLabel">RANKINGS</span><small id="rankingsSub">ACHIEVEMENTS</small></button>
+      <button class="v6-feature" id="btnHowTo"><b>◈</b><span id="tacticsLabel">TACTICS</span><small id="tacticsSub">HOW TO PLAY</small></button>
+      <button class="v6-feature" id="btnStory"><b>▣</b><span id="chronicleLabel">CHRONICLE</span><small id="chronicleSub">8 CHAPTERS</small></button>
+      <button class="v6-feature" id="btnSettings"><b>⚙</b><span id="systemLabel">SYSTEM</span><small id="systemSub">SETTINGS</small></button>
+    </div>
+    <div class="v6-daily" id="dailyCard"></div>
+    <div class="v6-login" id="dailyLoginCard"></div>
+
+    <!-- ===================== IN-APP ADS: MULTI FORMAT ===================== -->
+    <section class="memristor-menu-ads" aria-label="Advertisement">
+      <div class="memristor-ad-label" id="menuAdLabel">ADVERTISEMENT</div>
+      <div class="memristor-ad-300-wrap">
+        <div class="memristor-ad-slot memristor-ad-300x250">
+          <script>
+            atOptions = {
+              'key' : 'b108960c45c5ac210f73d9273fba1bc6',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+            };
+          </script>
+          <script src="https://www.highrevenueformat.com/b108960c45c5ac210f73d9273fba1bc6/invoke.js"></script>
+        </div>
+      </div>
+
+      <div class="memristor-ad-slot memristor-ad-native">
+        <script async="async" data-cfasync="false" src="https://pl31200303.profitableratecpmnetwork.com/0a0d4b305f6b9adda65167725963c2ac/invoke.js"></script>
+        <div id="container-0a0d4b305f6b9adda65167725963c2ac"></div>
+      </div>
+
+      <details class="memristor-ad-more">
+        <summary id="moreAdsLabel">More ads</summary>
+        <div class="memristor-ad-slot memristor-ad-160x300">
+          <script>
+            atOptions = {
+              'key' : '679121d009d7ec597b126772631c07d8',
+              'format' : 'iframe',
+              'height' : 300,
+              'width' : 160,
+              'params' : {}
+            };
+          </script>
+          <script src="https://www.highrevenueformat.com/679121d009d7ec597b126772631c07d8/invoke.js"></script>
+        </div>
+      </details>
+    </section>
+
+    <div class="v6-footer"><span>MEMRISTORI V11.1.0 • V10 CORE + REAL GLB</span><span>•</span><span id="omegaProtocolFooter">OMEGA PROTOCOL</span></div>
+  </div>
+</section>
+
+<!-- ===================== V6 MAP COMMAND ===================== -->
+<section id="screen-map" class="screen">
+  <header class="v6-panel-header"><button class="v6-back back-btn" data-back="screen-menu">‹</button><div><b id="tacticalMapsTitle">TACTICAL MAPS</b><small id="selectSectorTitle">SELECT DEFENSE SECTOR</small></div><span class="v6-header-badge" id="mapsBadge">9 MAPS</span></header>
+  <div class="v6-map-body" id="v6MapGrid"></div>
+</section>
+
+<!-- ===================== HOW TO PLAY ===================== -->
+<section id="screen-howto" class="screen">
+  <header class="panel-header">
+    <button class="iconBtn back-btn" data-back="screen-menu">←</button>
+    <h2 id="howtoTitle">Cum se joacă</h2>
+  </header>
+  <div class="panel-body">
+    <div class="howto-item"><span class="howto-ic">🎯</span><div><b id="howObjective">Obiectiv</b><p id="howObjectiveText">Oprește toxinele și agenții patogeni înainte să ajungă la Nucleul Bio-Electronic. Dacă Integritatea ajunge la 0, misiunea se încheie.</p></div></div>
+    <div class="howto-item"><span class="howto-ic">🔧</span><div><b id="howPlacement">Plasare noduri memristor</b><p id="howPlacementText">Alege un tip de nod din bara de jos, apoi apasă pe un slot liber de pe circuit pentru a-l construi. Fiecare nod costă Energie bio-electrică.</p></div></div>
+    <div class="howto-item"><span class="howto-ic">⬆️</span><div><b id="howUpgradeSell">Upgrade & vânzare</b><p id="howUpgradeSellText">Apasă pe un nod plasat pentru a-l îmbunătăți (crește dmg/rază) sau a-l vinde pentru 60% din costul investit.</p></div></div>
+    <div class="howto-item"><span class="howto-ic">🌊</span><div><b id="howWaves">Valuri</b><p id="howWavesText">Fiecare val aduce amenințări tot mai puternice. La fiecare 5 valuri apare un Nucleu Infecțios (boss) cu escortă. Până la valul 200 campania continuă. Valul 200 este OMEGA, un Boss Final cu rezistență adaptivă și ferestre de vulnerabilitate; după 200 începe Endless.</p></div></div>
+    <div class="howto-item"><span class="howto-ic">💠</span><div><b id="howNano">Nanoparticule</b><p id="howNanoText">Câștigi Nanoparticule din bonusuri de val și realizări. Folosește-le în Laborator pentru upgrade-uri permanente valabile în toate misiunile.</p></div></div>
+    <div class="howto-item"><span class="howto-ic">⏱️</span><div><b id="howSpeed">Viteză joc</b><p id="howSpeedText">Folosește butonul de viteză (1x/2x/3x) din timpul jocului pentru a accelera valurile.</p></div></div>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section id="screen-story" class="screen">
+  <header class="panel-header"><button class="iconBtn back-btn" data-back="screen-menu">←</button><h2 id="storyTitle">Cronica Memristor</h2></header>
+  <div class="panel-body story-body" id="storyBody"></div>
+</section>
+
+<!-- ===================== SHOP ===================== -->
+<section id="screen-shop" class="screen">
+  <header class="panel-header">
+    <button class="iconBtn back-btn" data-back="screen-menu">←</button>
+    <h2 id="shopTitle">Laborator</h2>
+    <span class="crystal-tag">💠 <span id="shopCrystals">0</span></span>
+  </header>
+  <div class="panel-body" id="shopList"></div>
+</section>
+
+<!-- ===================== ACHIEVEMENTS ===================== -->
+<section id="screen-achievements" class="screen">
+  <header class="panel-header">
+    <button class="iconBtn back-btn" data-back="screen-menu">←</button>
+    <h2 id="achTitle">Realizări</h2>
+    <span class="crystal-tag" id="achProgress">0/0</span>
+  </header>
+  <div class="panel-body" id="achList"></div>
+</section>
+
+<!-- ===================== SETTINGS ===================== -->
+<section id="screen-settings" class="screen">
+  <header class="panel-header">
+    <button class="iconBtn back-btn" data-back="screen-menu">←</button>
+    <h2 id="settingsTitle">Setări</h2>
+  </header>
+  <div class="panel-body">
+    <div class="setting-row"><span id="soundLabel">🔊 Sunet</span><label class="switch"><input type="checkbox" id="toggleSound" checked><span class="slider"></span></label></div>
+    <div class="setting-row"><span id="vibrateLabel">📳 Vibrații</span><label class="switch"><input type="checkbox" id="toggleVibrate" checked><span class="slider"></span></label></div>
+    <div class="setting-row"><span id="notifLabel">🔔 Notificări val nou</span><label class="switch"><input type="checkbox" id="toggleNotif" checked><span class="slider"></span></label></div>
+    <button class="btn btn-danger" id="btnResetProgress">🗑 Resetează tot progresul</button>
+    <p class="settings-note" id="settingsNote">Progresul se salvează automat local pe dispozitiv.</p>
+  </div>
+</section>
+
+<!-- ===================== GAME ===================== -->
+<section id="screen-game" class="screen">
+  <div class="hud-top">
+    <div class="hud-stat"><span class="hud-ic">⚡</span><span id="hudEnergy">0</span></div>
+    <div class="hud-corewrap">
+      <div class="hud-core-label"><span id="integrityLabel">INTEGRITATE</span> <span id="hudWaveLabel">Val 0/200</span></div>
+      <div class="hud-corebar"><div class="hud-corebar-fill" id="hudCoreFill"></div></div>
+    </div>
+    <div class="hud-stat">💠 <span id="hudCrystals">0</span></div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+  <canvas id="game3DCanvas" aria-hidden="true"></canvas>
+  <div class="combat-readout"><span id="hudCombo">COMBO x0</span><div class="overdrive-bar"><div id="hudOverdriveFill"></div></div><span id="hudOverdrive">0%</span></div>
+
+  <div class="hud-side">
+    <button class="roundBtn" id="btnPause">⏸</button>
+    <button class="roundBtn" id="btnSpeed">1x</button>
+    <button class="roundBtn" id="btnOverdrive" title="Protocol Overdrive">🔥</button>
+    <button class="roundBtn wave-btn" id="btnStartWave">▶ <span id="waveButtonLabel">Val</span></button>
+  </div>
+
+
+  <!-- ===================== IN-APP AD BANNER ===================== -->
+  <div id="memristorInAppAd" class="memristor-inapp-ad" aria-label="Advertisement">
+    <div class="memristor-ad-label" id="adLabel">ADVERTISEMENT</div>
+    <div class="memristor-ad-frame">
+      <script>
+        atOptions = {
+          'key' : 'feb7a2a894a505f6b1759cef9bd165ea',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highrevenueformat.com/feb7a2a894a505f6b1759cef9bd165ea/invoke.js"></script>
+    </div>
+  </div>
+
+  <div class="v6-combat-banner"><div><b id="v6CombatMap">NEURAL CORE</b><small id="combatLiveLabel">OMEGA PROTOCOL // LIVE DEFENSE</small></div><div class="v6-boss-mini"><img src="img/v6-omega.svg" alt="Omega"><span>OMEGA</span></div></div>
+  <div class="node-toolbar" id="nodeToolbar"></div>
+
+  <!-- Node info popup -->
+  <div class="popup-overlay" id="nodePopup">
+    <div class="popup-card">
+      <h3 id="nodePopupName">Nod</h3>
+      <p id="nodePopupDesc" class="popup-desc"></p>
+      <div class="popup-stats" id="nodePopupStats"></div>
+      <div class="popup-actions">
+        <button class="btn btn-secondary" id="nodeUpgradeBtn">⬆ Upgrade</button>
+        <button class="btn" id="nodeFuseBtn">⚛️ Fuziune</button>
+        <button class="btn btn-danger" id="nodeSellBtn">💰 Vinde</button>
+        <button class="btn" id="nodeCloseBtn">Închide</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pause overlay -->
+  <div class="popup-overlay" id="pauseOverlay">
+    <div class="popup-card">
+      <h3 id="pauseTitle">Pauză</h3>
+      <div class="popup-actions vertical">
+        <button class="btn btn-primary" id="resumeBtn">▶ Continuă</button>
+        <button class="btn" id="pauseSettingsBtn">⚙ Setări</button>
+        <button class="btn btn-danger" id="quitToMenuBtn">🚪 Ieși în meniu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave clear toast -->
+  <div class="wave-toast" id="waveToast"></div>
+  <div class="narrative-overlay" id="narrativeOverlay"><div class="narrative-card"><div class="narrative-kicker" id="narrativeKicker">ARCHIVE</div><h3 id="narrativeTitle">Jurnalul implantului</h3><p id="narrativeText"></p><button class="btn btn-primary" id="narrativeClose">Continuă</button></div></div>
+</section>
+
+<!-- ===================== GAME OVER / VICTORY ===================== -->
+<section id="screen-end" class="screen">
+  <div class="end-wrap">
+    <h1 id="endTitle">IMPLANT COMPROMIS</h1>
+    <div class="end-stats">
+      <div class="end-stat"><span id="endWaveLabel">Val atins</span><b id="endWave">0</b></div>
+      <div class="end-stat"><span id="endKillsLabel">Amenințări neutralizate</span><b id="endKills">0</b></div>
+      <div class="end-stat"><span id="endScoreLabel">Scor</span><b id="endScore">0</b></div>
+      <div class="end-stat gold"><span id="endCrystalsLabel">Nanoparticule câștigate</span><b id="endCrystals">+0</b></div>
+    </div>
+    <div id="endBadgeNew" class="end-badge" style="display:none">🏆 Record nou!</div>
+    <div class="menu-buttons">
+      <button class="btn btn-primary" id="btnContinueEndless" style="display:none">♾ Continuă Endless</button>
+      <button class="btn btn-primary" id="btnRetry">↻ Încearcă din nou</button>
+      <button class="btn" id="btnEndMenu">🏠 Meniu principal</button>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="globalToast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/webgl3d.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+<script src="js/evolution_v10.js"></script>
+<script>/* Memristor Evolution 10.0 */ if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(()=>{}); </script></body>
+</html>

@@ -1,0 +1,17 @@
+MEMRISTORI V6.1 — MULTI-FORMAT IN-APP ADS
+
+Base: exact stable Memristori V6.0.3 PERFORMANCE + TOUCH FIXED.
+No gameplay, renderer, maps, controls, graphics, translations or existing 320x50 in-game banner were removed.
+
+Added in the main menu:
+- Adsterra/HighRevenueFormat 300x250 banner (key b108960c45c5ac210f73d9273fba1bc6)
+- Adsterra Native Banner container (0a0d4b305f6b9adda65167725963c2ac)
+- 160x300 banner inside an optional expandable "More ads" section (key 679121d009d7ec597b126772631c07d8)
+
+Existing in-game 320x50 banner remains active.
+Existing SmartLink remains available through its existing menu action.
+
+Deliberately NOT forced into the app as automatic popups/redirects:
+- Social Bar
+- Popunder
+These are left out of the automatic in-app flow to avoid disruptive navigation/UX.

@@ -1,0 +1,19 @@
+MEMRISTORI V10.1.0 — INTEGRATED COMPLETE
+
+Base: V10.0 ULTIMATE COMPLETE.
+
+Completed:
+- V10 skill tree effects are consumed by the gameplay engine.
+- Relic effects are consumed by the gameplay engine.
+- Local season modifiers affect XP, Core Integrity, boss rewards and tempo.
+- Adaptive Director modifies wave pressure and rewards.
+- Daily perfect-wave bonus is wired.
+- Low Energy daily mutation increases kill energy.
+- Elite reward multiplier is wired.
+- Overdrive duration skill is wired.
+- Season milestones grant real rewards.
+- Version footer corrected to V10.1.0.
+- Correct working PKCS12 signing certificate retained.
+
+No online/server dependency was added. The game remains playable offline.
+Renderer and existing V10 architecture are preserved; changes are additive.

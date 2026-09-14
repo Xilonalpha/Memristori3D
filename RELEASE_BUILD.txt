@@ -1,0 +1,6 @@
+MEMRISTORI V10.1.1 RELEASE
+AAB build for Google Play.
+Base: exact V10.1.0 INTEGRATED.
+Renderer and existing gameplay preserved.
+Signing: key0 / certificates/android.p12 (verified working PKCS12 certificate)
+Keystore password / alias password: kakylan123@#@

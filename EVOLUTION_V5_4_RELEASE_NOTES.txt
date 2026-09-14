@@ -1,0 +1,15 @@
+MEMRISTOR — EVOLUTION v5.4
+Base: EVOLUTION v5.3 DAILY DEFENSE
+
+ADĂUGAT:
+- 10 hărți totale, inclusiv Cortical Spiral, Synaptic Forge, Lymphatic Maze, Axon Cathedral și Omega Citadel.
+- Geometrie ajustată în zona virtuală 360x640 și CSS responsive pentru telefoane mici/mari, portrait/landscape și safe-area.
+- Detectare automată a limbii telefonului: română, italiană, engleză, franceză, spaniolă.
+- Campanie extinsă de la 80 la 200 de valuri.
+- Valul 200: Boss Final OMEGA, 52.000 HP, armură, rezistență adaptivă la repetarea aceluiași tip de nod, faze defensive, atacuri ranged și reinforcements.
+- Ferestre de vulnerabilitate OMEGA: 3,2 secunde la fiecare 11 secunde.
+- Jurnal narativ restaurat: 8 capitole, deblocate progresiv la valurile 1,20,45,70,100,140,175,200; dialog interactiv și pauză automată.
+- Recompensă zilnică de autentificare: streak de 7 zile, recompense 10/15/20/25/30/45/75 nanoparticule.
+- Salvarea existentă și rendererul Visual Rebirth sunt păstrate; modificările sunt additive.
+
+VALIDARE: node --check pentru data.js, game.js, main.js și storage.js.

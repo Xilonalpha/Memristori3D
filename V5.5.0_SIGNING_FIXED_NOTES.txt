@@ -1,0 +1,12 @@
+MEMRISTOR v5.5.0 - SIGNING FIXED
+
+Base: supplied Memristorv5.5.zip
+Signing certificate: certificates/android.p12
+Alias: key0
+Package type: AAB (bundle)
+Release build: enabled
+Version: 5.5.0
+Android versionCode: 50500
+
+The project/game source was preserved. Only the VoltBuilder signing configuration,
+certificate, and version metadata were updated.

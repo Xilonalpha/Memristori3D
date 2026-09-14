@@ -1,0 +1,19 @@
+{
+  "name": "memristor-implant-defense",
+  "displayName": "Memristor: Apararea Implantului",
+  "version": "11.1.1",
+  "description": "MEMRISTORI V10.1.1 Integrated: neural evolution, relics, local seasons, adaptive director, codex, local leaderboard and 200-wave campaign with Omega.",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-local-notification": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-inappbrowser": {}
+    }
+  }
+}

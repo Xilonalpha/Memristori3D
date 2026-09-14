@@ -1,0 +1,17 @@
+MEMRISTOR — Apărarea Implantului
+V5.4.1 BOOTFIX — SOURCE RELEASE
+
+Scop:
+Repararea blocării la splash observate în v5.4.0.
+
+Modificarea principală:
+- boot-ul aplicației nu mai depinde de evenimentul Cordova deviceready;
+- pornirea este făcută după DOMContentLoaded;
+- inițializarea este separată pe pași și protejată cu try/catch;
+- splash-ul are fallback garantat către meniul principal;
+- inițializarea nativă Cordova (StatusBar, pause/resume, notificări) rămâne separată;
+- nu au fost rescrise rendererul Canvas, hărțile, sistemul de valuri, nodurile, fuziunile, Daily Defense, povestea sau Boss Omega.
+
+Versiune: 5.4.1
+Package ID: com.biomemristor.defense
+Android versionCode: 50401

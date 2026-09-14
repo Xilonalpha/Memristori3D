@@ -1,0 +1,5 @@
+MEMRISTORI V10.1.1 DEBUG TEST
+APK build for device testing.
+Base: exact V10.1.0 DEBUG TEST.
+Renderer and existing gameplay preserved.
+See V10.1.1_REPAIRS.txt for verified fixes.

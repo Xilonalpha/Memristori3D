@@ -1,0 +1,25 @@
+MEMRISTORI V10.1.1 — VERIFIED REPAIRS
+
+Base: exact V10.1.0 DEBUG TEST source.
+Renderer and existing gameplay preserved.
+
+Fixed:
+- Continue/V10 snapshot now preserves V10 runtime modifiers and counters; restored runs no longer re-apply meta bonuses or duplicate V10 XP accounting.
+- Daily Challenge now completes exactly at its advertised target wave (>= target).
+- Endless mode is explicitly marked when continuing after Wave 200 and tracks real Endless progress for its achievement.
+- Endless regeneration achievement now checks actual Endless waves, not campaign best wave.
+- Corrected achievement text/conditions: Wave 50 and all 12 node types.
+- Added missing achievement inputs for 3 Neural Beams and Overdrive count.
+- Season 1000 XP now grants and records a real season badge; monthly reset clears the current badge.
+- Relics now use differentiated rarity tiers; displayed effects match their actual gameplay effects and forge costs scale by rarity.
+- Replicator elite is now reachable on the 12/36/48-wave elite cycle; Guardian, Nullifier and Colossus remain in rotation.
+- Victory clears stale saved-run state so the menu cannot offer a completed run as Continue.
+- Completed campaign victories count as completed runs in persistent statistics.
+- Neural Center footer corrected to V10.1.1.
+- Service-worker cache bumped to avoid stale V10.1.0 assets.
+
+Signing preserved and verified:
+- alias: key0
+- keystore: certificates/android.p12
+- password: kakylan123@#@
+- certificate SHA-256: A3:B2:B7:0D:74:9D:E6:8E:C0:43:1F:CC:E4:D1:B9:35:D0:82:A0:9D:9A:EB:22:42:9E:70:92:25:EF:EA:BA:C7

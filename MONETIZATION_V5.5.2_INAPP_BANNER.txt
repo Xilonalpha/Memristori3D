@@ -1,0 +1,18 @@
+MEMRISTOR v5.5.2 — IN-APP AD BANNER
+
+Base:
+- Memristor v5.5.1 monetized source.
+
+Change:
+- Added the supplied Adsterra/HighRevenueFormat 320x50 banner directly
+  inside the Cordova game UI, immediately above the node toolbar.
+- This is an in-app web banner; users do not need to open the Memristor website.
+- The existing SmartLink remains available separately.
+- Existing game renderer, maps, waves, bosses, progression, audio and UI
+  logic were not rewritten.
+
+Important:
+- Ad network policy/traffic eligibility must be respected.
+- No rewarded/incentivized ad clicks were added.
+- Revenue is not guaranteed merely by displaying the banner; it depends on
+  the ad network accepting the app/WebView traffic and on eligible traffic.

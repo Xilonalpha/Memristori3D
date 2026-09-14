@@ -1,0 +1,16 @@
+MEMRISTOR EVOLUTION v5.0 — EVOLUTION ENGINE
+
+Construit direct peste v4.0 VISUAL REBIRTH.
+
+ADĂUGAT:
+- Node Fusion System: 4 fuziuni tactice
+  * Nod Superconductiv (Laser + Crio)
+  * Swarm Sentinel (Dronă + EM)
+  * Anticorp Fotonic (Laser + Antivirus)
+  * Singularitate Temporală (Temporal + Crio)
+- Adaptive Battle Director: analizează construcția jucătorului înainte de val
+- Enemy Genome Pressure: inamicii pot primi izolație, adaptare termică sau dispersie
+- Compatibilitate păstrată cu Canvas/Cordova/VoltBuilder
+- Fundament pregătit pentru renderer WebGL2/WebGPU ulterior, fără migrare brutală
+
+Nu au fost eliminate mecanicile precedente.
