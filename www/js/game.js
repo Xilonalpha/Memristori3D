@@ -188,7 +188,7 @@ const Game = (function () {
     const cost = nodeCost(typeId, 1);
     if (R.energy < cost) { AudioSys.error(); return false; }
     R.energy -= cost;
-    R.nodes.push({ slot: slotIdx, typeId, level: 1, cooldown: 0 });
+    R.nodes.push({ slot: slotIdx, typeId, level: 1, cooldown: 0, targetId: null, aimAngle: 0, _3dFire: 0, _3dRecoil: 0 });
     if (typeId === 'laser') R.laserBuilt = (R.laserBuilt || 0) + 1;
     R.nodeTypeCountsThisRun[typeId] = (R.nodeTypeCountsThisRun[typeId] || 0) + 1;
     if (typeId === 'emp') R.maxEmpInRun = Math.max(R.maxEmpInRun, R.nodeTypeCountsThisRun.emp || 0);
@@ -412,7 +412,8 @@ const Game = (function () {
     const buffCache = R.nodes.map((n, idx) => buffMultiplierFor(n.slot));
     R.nodes.forEach((n, idx) => {
       const def = NODE_TYPES[n.typeId];
-      if (def.id === 'amp' || def.id === 'shield') return;
+      n._3dFire = Math.max(0,(n._3dFire||0)-dt*3.5); n._3dRecoil = Math.max(0,(n._3dRecoil||0)-dt*4);
+      if (def.id === 'amp' || def.id === 'shield') { n._3dFire = Math.max(0,(n._3dFire||0)-dt*2); return; }
       if (def.id === 'repair') {
         n.cooldown -= dt;
         if (n.cooldown <= 0 && R.coreHP < R.coreMaxHP) { R.coreHP = Math.min(R.coreMaxHP, R.coreHP + def.heal * (1 + (n.level - 1) * 0.35) * (R.metaRepairMult || 1)); n.cooldown = def.rate; spawnParticles(CORE_POS.x, CORE_POS.y, def.color, 8); }
@@ -431,9 +432,12 @@ const Game = (function () {
       });
       if (!best) return;
       n.cooldown = def.rate;
+      n.targetId = best ? best.id : null;
+      n._3dFire = 1; n._3dRecoil = 1;
       const dmgMult = buffCache[idx] * globalDamageMult() * (R.overdriveActive > 0 ? 1.45 : 1);
       if (def.mine && R.enemies.filter(e => { const ep=posAtDistance(e.distance); return Math.hypot(ep.x-pos.x, ep.y-pos.y) <= def.range; }).length < 2) return;
       if (def.splash > 0) {
+        n.targetId = best ? best.id : null; n._3dFire = 1; n._3dRecoil = 1;
         // câmp EM: lovește toți din rază instant
         AudioSys.emp();
         R.enemies.forEach(e => {
@@ -787,7 +791,7 @@ const Game = (function () {
       mode:R.mode||'campaign',daily:R.daily?JSON.parse(JSON.stringify(R.daily)):null,waveInProgress:R.waveInProgress,spawnGroups:R.spawnGroups.map(g=>({...g})),
       enemies:R.enemies.map(e=>({...e})),projectiles:R.projectiles.map(p=>({x:p.x,y:p.y,targetId:p.target?p.target.id:null,speed:p.speed,damage:p.damage,color:p.color,slow:p.slow,chain:p.chain,infect:p.infect,temporal:p.temporal})),
       enemyProjectiles:(R.enemyProjectiles||[]).map(p=>({...p})),particles:R.particles.map(p=>({...p})),anomalies:R.anomalies.map(a=>({...a})),shockwaves:R.shockwaves.map(a=>({...a})),beams:R.beams.map(a=>({...a})),
-      nodes:R.nodes.map(n=>({slot:n.slot,typeId:n.typeId,level:n.level,cooldown:n.cooldown})),selected:R.selected,speedMult:R.speedMult,
+      nodes:R.nodes.map(n=>({slot:n.slot,typeId:n.typeId,level:n.level,cooldown:n.cooldown,targetId:n.targetId||null,aimAngle:n.aimAngle||0})),selected:R.selected,speedMult:R.speedMult,
       killsThisRun:R.killsThisRun,bossKillsThisRun:R.bossKillsThisRun,nodeTypeCountsThisRun:R.nodeTypeCountsThisRun,maxEmpInRun:R.maxEmpInRun,maxEnergyInRun:R.maxEnergyInRun,perfectWaveAchieved:R.perfectWaveAchieved,allNodeTypesUsed:R.allNodeTypesUsed,coreHPAtWaveStart:R.coreHPAtWaveStart,runCrystalsEarned:R.runCrystalsEarned,nextEnemyId:R.nextEnemyId,maxEndlessWave:R.maxEndlessWave||0,endlessMode:!!R.endlessMode,
       finalized:false,__v10MetaApplied:true,__v10Kills:R.__v10Kills||0,__v10Wave:R.__v10Wave||R.waveNumber,metaDamageMult:R.metaDamageMult||1,metaYieldMult:R.metaYieldMult||1,metaXPMult:R.metaXPMult||1,metaBossReward:R.metaBossReward||1,metaCritBonus:R.metaCritBonus||0,metaNodeCostMult:R.metaNodeCostMult||1,metaSlowMult:R.metaSlowMult||1,metaRepairMult:R.metaRepairMult||1,metaWaveRewardMult:R.metaWaveRewardMult||1,metaEliteRewardMult:R.metaEliteRewardMult||1,metaOverdriveDuration:R.metaOverdriveDuration||8,metaLevel:R.metaLevel||1,metaRelics:Array.isArray(R.metaRelics)?R.metaRelics.slice():[],v10Season:R.v10Season||null,overdrive:R.overdrive,overdriveActive:R.overdriveActive,combo:R.combo,comboTimer:R.comboTimer,battleDirector:R.battleDirector,fusionCount:R.fusionCount,currentWaveMeta:R.currentWaveMeta,visualTime:R.visualTime,bossTacticHits:R.enemies.filter(e=>e.typeId==='finalBoss').map(e=>e.bossTacticHits||{}),bossPhase:R.enemies.find(e=>e.typeId==='finalBoss')?.bossPhase||0,bossCycleTimer:R.enemies.find(e=>e.typeId==='finalBoss')?.bossCycleTimer||11
     };

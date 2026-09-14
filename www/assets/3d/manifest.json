@@ -1,0 +1,98 @@
+{
+  "version": 2,
+  "baseUrl": "https://xilonalpha.github.io/Memristori3D/assets/3d/",
+  "files": [
+    "models/Arc Cannon Turret_Meshy_AI_2026-09-12.glb",
+    "models/Arc Reactor Sentinel_Meshy_AI_2026-09-13.glb",
+    "models/Circuit Voyager_Meshy_AI_2026-09-13.glb",
+    "models/Crimson Arachnid Sentinel_Meshy_AI_2026-09-13.glb",
+    "models/Crimson Core Sentinel_Meshy_AI_2026-09-13.glb",
+    "models/Crimson Siege Walker_Meshy_AI_2026-09-13.glb",
+    "models/Crimson Warmech_Meshy_AI_2026-09-13.glb",
+    "models/Cryo Turret_Meshy_AI_2026-09-12.glb",
+    "models/Cybernetic Sentinel_Meshy_AI_2026-09-13.glb",
+    "models/Ironclad Sentinel_Meshy_AI_2026-09-13.glb",
+    "models/Mechanical Kraken_Meshy_AI_2026-09-13.glb",
+    "models/Neon Arc Reactor Bot_Meshy_AI_2026-09-12.glb",
+    "models/Neon Leviathan_Meshy_AI_2026-09-13.glb",
+    "models/Neon Reactor Nexus_Meshy_AI_2026-09-13.glb",
+    "models/Premium AAA sci-fi bio-electronic tower defense Pulse Tower, compact automated electromagnetic defense turret, heavy dark gunmetal armored base, rotating central turret head, t_Meshy_AI_2026-09-12.glb",
+    "models/Quantum Siege Engine_Meshy_AI_2026-09-13.glb",
+    "models/arc_cannon.glb",
+    "models/crimson_core_sentinel.glb"
+  ],
+  "assets": {
+    "arc_cannon_turret_meshy_ai_2026_09_12": {
+      "local": "models/Arc Cannon Turret_Meshy_AI_2026-09-12.glb",
+      "remote": "models/Arc Cannon Turret_Meshy_AI_2026-09-12.glb"
+    },
+    "arc_reactor_sentinel_meshy_ai_2026_09_13": {
+      "local": "models/Arc Reactor Sentinel_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Arc Reactor Sentinel_Meshy_AI_2026-09-13.glb"
+    },
+    "circuit_voyager_meshy_ai_2026_09_13": {
+      "local": "models/Circuit Voyager_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Circuit Voyager_Meshy_AI_2026-09-13.glb"
+    },
+    "crimson_arachnid_sentinel_meshy_ai_2026_09_13": {
+      "local": "models/Crimson Arachnid Sentinel_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Crimson Arachnid Sentinel_Meshy_AI_2026-09-13.glb"
+    },
+    "crimson_core_sentinel_meshy_ai_2026_09_13": {
+      "local": "models/Crimson Core Sentinel_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Crimson Core Sentinel_Meshy_AI_2026-09-13.glb"
+    },
+    "crimson_siege_walker_meshy_ai_2026_09_13": {
+      "local": "models/Crimson Siege Walker_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Crimson Siege Walker_Meshy_AI_2026-09-13.glb"
+    },
+    "crimson_warmech_meshy_ai_2026_09_13": {
+      "local": "models/Crimson Warmech_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Crimson Warmech_Meshy_AI_2026-09-13.glb"
+    },
+    "cryo_turret_meshy_ai_2026_09_12": {
+      "local": "models/Cryo Turret_Meshy_AI_2026-09-12.glb",
+      "remote": "models/Cryo Turret_Meshy_AI_2026-09-12.glb"
+    },
+    "cybernetic_sentinel_meshy_ai_2026_09_13": {
+      "local": "models/Cybernetic Sentinel_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Cybernetic Sentinel_Meshy_AI_2026-09-13.glb"
+    },
+    "ironclad_sentinel_meshy_ai_2026_09_13": {
+      "local": "models/Ironclad Sentinel_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Ironclad Sentinel_Meshy_AI_2026-09-13.glb"
+    },
+    "mechanical_kraken_meshy_ai_2026_09_13": {
+      "local": "models/Mechanical Kraken_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Mechanical Kraken_Meshy_AI_2026-09-13.glb"
+    },
+    "neon_arc_reactor_bot_meshy_ai_2026_09_12": {
+      "local": "models/Neon Arc Reactor Bot_Meshy_AI_2026-09-12.glb",
+      "remote": "models/Neon Arc Reactor Bot_Meshy_AI_2026-09-12.glb"
+    },
+    "neon_leviathan_meshy_ai_2026_09_13": {
+      "local": "models/Neon Leviathan_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Neon Leviathan_Meshy_AI_2026-09-13.glb"
+    },
+    "neon_reactor_nexus_meshy_ai_2026_09_13": {
+      "local": "models/Neon Reactor Nexus_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Neon Reactor Nexus_Meshy_AI_2026-09-13.glb"
+    },
+    "premium_aaa_sci_fi_bio_electronic_tower_defense_pulse_tower_compact_automated_electromagnetic_defense_turret_heavy_dark_gunmetal_armored_base_rotating_central_turret_head_t_meshy_ai_2026_09_12": {
+      "local": "models/Premium AAA sci-fi bio-electronic tower defense Pulse Tower, compact automated electromagnetic defense turret, heavy dark gunmetal armored base, rotating central turret head, t_Meshy_AI_2026-09-12.glb",
+      "remote": "models/Premium AAA sci-fi bio-electronic tower defense Pulse Tower, compact automated electromagnetic defense turret, heavy dark gunmetal armored base, rotating central turret head, t_Meshy_AI_2026-09-12.glb"
+    },
+    "quantum_siege_engine_meshy_ai_2026_09_13": {
+      "local": "models/Quantum Siege Engine_Meshy_AI_2026-09-13.glb",
+      "remote": "models/Quantum Siege Engine_Meshy_AI_2026-09-13.glb"
+    },
+    "arc_cannon": {
+      "local": "models/arc_cannon.glb",
+      "remote": "models/arc_cannon.glb"
+    },
+    "crimson_core_sentinel": {
+      "local": "models/crimson_core_sentinel.glb",
+      "remote": "models/crimson_core_sentinel.glb"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+Memristori 11.1.3 — REAL GLB GAMEPLAY BRIDGE
+
+- Keeps V10.1.1 gameplay as source of truth.
+- Real GLB models are selected lazily from www/models via assets/3d/manifest.json.
+- Towers are rendered only when actually placed.
+- Tower aim follows the existing gameplay target (targetId) and rotates the GLB.
+- Fire events drive GLB recoil/glow while existing projectile/damage logic remains unchanged.
+- Enemies use real GLBs and follow the same existing path/distance logic.
+- If a matching GLB is unavailable, the original 2D renderer remains visible as fallback.
+- Supports multiple meshes/primitives from a GLB scene instead of only the first primitive.
